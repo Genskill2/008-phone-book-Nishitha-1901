@@ -249,10 +249,10 @@ int search(FILE *db_file, char *name)
   }
   while (p->next!=NULL)
   {
-    if (p->next==name)
+    if (strcmp(p->next,name)==0)
     {
       s=1;
-      p=p->next;
+      break;
     }
   }
   return s;
