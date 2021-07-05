@@ -247,13 +247,15 @@ int search(FILE *db_file, char *name)
   {
     return 0;
   }
-  while (p->next!=NULL)
+  while (p!=NULL)
   {
-    if (strcmp(p->next,name)==0)
+    if (strcmp(p->name,name)==0)
     {
+      printf("%s\n" ,p->phone);
       s=1;
       break;
     }
+    
   }
   return s;
 }
