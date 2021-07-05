@@ -241,7 +241,7 @@ int search(FILE *db_file, char *name)
 {
   entry *p = load_entries(db_file);
   entry *base = p;
-  entry *search = name;
+  
   int s=0;
   if (p==NULL)
   {
@@ -249,7 +249,7 @@ int search(FILE *db_file, char *name)
   }
   while (p->next!=NULL)
   {
-    if (p->next==search)
+    if (p->next==name)
     {
       s=1;
       p=p->next;
