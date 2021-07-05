@@ -241,5 +241,19 @@ int search(FILE *db_file, char *name)
 {
   entry *p = load_entries(db_file);
   entry *base = p;
-  entry *prev = NULL;
+  entry *search = name;
+  int s=0;
+  if (p==NULL)
+  {
+    return 0;
+  }
+  while (p->next!=NULL)
+  {
+    if (p->next==search)
+    {
+      s=1;
+      p=p->next;
+    }
+  }
+  return s;
 }
